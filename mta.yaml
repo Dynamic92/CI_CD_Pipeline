@@ -3,6 +3,7 @@ _schema-version: '2.1'
 parameters:
   deploy_mode: html5-repo
 version: 0.0.1
+
 modules:
   - name: pipeline-approuter
     type: approuter.nodejs
@@ -50,6 +51,9 @@ resources:
       path: ./xs-security.json
       service-plan: application
       service: xsuaa
+      config:
+       xsappname: uaa_Pipeline_${space}
+       tenant-mode: dedicated
     type: org.cloudfoundry.managed-service
   - name: dest_Pipeline
     parameters:
